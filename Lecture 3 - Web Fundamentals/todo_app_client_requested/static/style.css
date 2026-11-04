@@ -1,0 +1,6 @@
+body { font-family: system-ui, sans-serif; max-width: 480px; margin: 40px auto; padding: 0 16px; }
+form { display: flex; gap: 8px; margin-bottom: 24px; }
+input[type="text"] { flex: 1; padding: 8px; font-size: 16px; }
+button { padding: 8px 16px; font-size: 16px; cursor: pointer; }
+li { font-size: 18px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+li button { font-size: 14px; padding: 4px 12px; }
