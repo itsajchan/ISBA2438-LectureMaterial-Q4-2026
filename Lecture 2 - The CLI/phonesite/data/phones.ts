@@ -1,0 +1,40 @@
+import type { Phone } from "../lib/types";
+
+export const phones: Phone[] = [
+  { id: "iphone-18-pro-max", brand: "Apple", name: "iPhone 18 Pro Max", price: 1199, storage: 256, ram: 8, screen: 6.9, camera: "48MP triple", battery: 4685, colors: ["Titanium Black", "Silver", "Sky Blue"], releaseYear: 2026, stock: 24, rating: 4.9, onSale: false },
+  { id: "iphone-18", brand: "Apple", name: "iPhone 18", price: 899, storage: 256, ram: 8, screen: 6.3, camera: "48MP dual", battery: 4000, colors: ["Midnight", "Aurora", "White"], releaseYear: 2026, stock: 31, rating: 4.7, onSale: false },
+  { id: "iphone-17-pro", brand: "Apple", name: "iPhone 17 Pro", price: 889, originalPrice: 999, storage: 256, ram: 8, screen: 6.3, camera: "48MP triple", battery: 4250, colors: ["Cosmic Orange", "Deep Blue", "Silver"], releaseYear: 2025, stock: 18, rating: 4.8, onSale: true },
+  { id: "iphone-17", brand: "Apple", name: "iPhone 17", price: 699, originalPrice: 799, storage: 256, ram: 8, screen: 6.3, camera: "48MP dual", battery: 3800, colors: ["Lavender", "Sage", "Mist Blue", "White"], releaseYear: 2025, stock: 40, rating: 4.6, onSale: true },
+  { id: "iphone-16e", brand: "Apple", name: "iPhone 16e", price: 599, storage: 128, ram: 8, screen: 6.1, camera: "48MP dual", battery: 3561, colors: ["Black", "White"], releaseYear: 2025, stock: 27, rating: 4.3, onSale: false },
+  { id: "iphone-16-plus", brand: "Apple", name: "iPhone 16 Plus", price: 649, originalPrice: 749, storage: 128, ram: 8, screen: 6.7, camera: "48MP dual", battery: 4674, colors: ["Ultramarine", "Teal", "Pink", "Black"], releaseYear: 2024, stock: 22, rating: 4.5, onSale: true },
+  { id: "iphone-15", brand: "Apple", name: "iPhone 15", price: 549, originalPrice: 699, storage: 128, ram: 6, screen: 6.1, camera: "48MP dual", battery: 3349, colors: ["Blue", "Pink", "Yellow", "Black"], releaseYear: 2023, stock: 15, rating: 4.4, onSale: true },
+  { id: "galaxy-s26-ultra", brand: "Samsung", name: "Galaxy S26 Ultra", price: 1299, storage: 512, ram: 16, screen: 6.9, camera: "200MP quad", battery: 5400, colors: ["Titanium Black", "Titanium Grey", "Jade"], releaseYear: 2026, stock: 12, rating: 4.8, onSale: false },
+  { id: "galaxy-s26", brand: "Samsung", name: "Galaxy S26", price: 849, storage: 256, ram: 12, screen: 6.3, camera: "50MP triple", battery: 4600, colors: ["Onyx Black", "Ivory", "Coral Red"], releaseYear: 2026, stock: 25, rating: 4.6, onSale: false },
+  { id: "galaxy-z-fold-7", brand: "Samsung", name: "Galaxy Z Fold 7", price: 1599, originalPrice: 1799, storage: 512, ram: 16, screen: 8.0, camera: "50MP triple", battery: 4400, colors: ["Blue Shadow", "Silver Shadow", "Jet Black"], releaseYear: 2025, stock: 8, rating: 4.5, onSale: true },
+  { id: "galaxy-z-flip-7", brand: "Samsung", name: "Galaxy Z Flip 7", price: 999, storage: 256, ram: 12, screen: 6.9, camera: "50MP dual", battery: 4300, colors: ["Blue Shadow", "Coral Red", "Mint"], releaseYear: 2025, stock: 14, rating: 4.3, onSale: false },
+  { id: "galaxy-s25-fe", brand: "Samsung", name: "Galaxy S25 FE", price: 579, originalPrice: 649, storage: 256, ram: 8, screen: 6.7, camera: "50MP triple", battery: 4700, colors: ["Navy", "Jet Black", "White"], releaseYear: 2025, stock: 33, rating: 4.2, onSale: true },
+  { id: "galaxy-a56", brand: "Samsung", name: "Galaxy A56", price: 449, storage: 256, ram: 8, screen: 6.7, camera: "50MP triple", battery: 5000, colors: ["Awesome Graphite", "Awesome Olive", "Pink"], releaseYear: 2025, stock: 48, rating: 4.1, onSale: false },
+  { id: "galaxy-a16", brand: "Samsung", name: "Galaxy A16", price: 199, storage: 128, ram: 6, screen: 6.7, camera: "50MP triple", battery: 5000, colors: ["Blue Black", "Light Green", "Gold"], releaseYear: 2024, stock: 60, rating: 3.9, onSale: false },
+  { id: "pixel-10-pro-xl", brand: "Google", name: "Pixel 10 Pro XL", price: 1199, storage: 256, ram: 16, screen: 6.8, camera: "50MP triple", battery: 5200, colors: ["Obsidian", "Porcelain", "Jade"], releaseYear: 2026, stock: 16, rating: 4.7, onSale: false },
+  { id: "pixel-10", brand: "Google", name: "Pixel 10", price: 799, storage: 256, ram: 12, screen: 6.3, camera: "50MP triple", battery: 4900, colors: ["Indigo", "Frost", "Limelight"], releaseYear: 2026, stock: 29, rating: 4.5, onSale: false },
+  { id: "pixel-9a", brand: "Google", name: "Pixel 9a", price: 429, originalPrice: 499, storage: 128, ram: 8, screen: 6.3, camera: "48MP dual", battery: 5100, colors: ["Porcelain", "Obsidian", "Peony", "Iris"], releaseYear: 2025, stock: 37, rating: 4.4, onSale: true },
+  { id: "pixel-9-pro", brand: "Google", name: "Pixel 9 Pro", price: 899, originalPrice: 999, storage: 256, ram: 16, screen: 6.3, camera: "50MP triple", battery: 4700, colors: ["Hazel", "Porcelain", "Rose Quartz"], releaseYear: 2024, stock: 19, rating: 4.6, onSale: true },
+  { id: "pixel-8a", brand: "Google", name: "Pixel 8a", price: 399, storage: 128, ram: 8, screen: 6.1, camera: "64MP dual", battery: 4492, colors: ["Aloe", "Bay", "Obsidian"], releaseYear: 2024, stock: 42, rating: 4.2, onSale: false },
+  { id: "oneplus-14", brand: "OnePlus", name: "OnePlus 14", price: 899, storage: 512, ram: 16, screen: 6.8, camera: "50MP triple", battery: 6000, colors: ["Storm Black", "Arctic Dawn"], releaseYear: 2026, stock: 21, rating: 4.6, onSale: false },
+  { id: "oneplus-13r", brand: "OnePlus", name: "OnePlus 13R", price: 599, storage: 256, ram: 12, screen: 6.8, camera: "50MP triple", battery: 6000, colors: ["Nebula Noir", "Luminous Blue"], releaseYear: 2025, stock: 30, rating: 4.4, onSale: false },
+  { id: "oneplus-12", brand: "OnePlus", name: "OnePlus 12", price: 549, originalPrice: 649, storage: 256, ram: 16, screen: 6.8, camera: "50MP triple", battery: 5400, colors: ["Flowy Emerald", "Silky Black"], releaseYear: 2024, stock: 17, rating: 4.5, onSale: true },
+  { id: "oneplus-nord-n30", brand: "OnePlus", name: "OnePlus Nord N30", price: 299, storage: 128, ram: 8, screen: 6.7, camera: "108MP triple", battery: 5000, colors: ["Chromatic Gray", "Golden Hour"], releaseYear: 2023, stock: 55, rating: 3.8, onSale: false },
+  { id: "xiaomi-15-ultra", brand: "Xiaomi", name: "Xiaomi 15 Ultra", price: 1099, storage: 512, ram: 16, screen: 6.7, camera: "50MP quad Leica", battery: 5410, colors: ["Black", "White", "Silver Chrome"], releaseYear: 2026, stock: 10, rating: 4.6, onSale: false },
+  { id: "xiaomi-15", brand: "Xiaomi", name: "Xiaomi 15", price: 749, storage: 256, ram: 12, screen: 6.4, camera: "50MP triple Leica", battery: 5240, colors: ["Black", "Green", "Lilac"], releaseYear: 2026, stock: 23, rating: 4.4, onSale: false },
+  { id: "redmi-note-14-pro-plus", brand: "Xiaomi", name: "Redmi Note 14 Pro+", price: 399, originalPrice: 449, storage: 256, ram: 12, screen: 6.7, camera: "200MP triple", battery: 5110, colors: ["Frost Blue", "Lavender", "Midnight Black"], releaseYear: 2025, stock: 45, rating: 4.2, onSale: true },
+  { id: "redmi-note-14", brand: "Xiaomi", name: "Redmi Note 14", price: 249, storage: 128, ram: 8, screen: 6.7, camera: "108MP dual", battery: 5500, colors: ["Ocean Blue", "Lime Green", "Black"], releaseYear: 2025, stock: 70, rating: 4.0, onSale: false },
+  { id: "poco-x7-pro", brand: "Xiaomi", name: "POCO X7 Pro", price: 349, storage: 256, ram: 12, screen: 6.7, camera: "50MP dual", battery: 6000, colors: ["Nebula Green", "Obsidian Black", "Yellow"], releaseYear: 2025, stock: 38, rating: 4.1, onSale: false },
+  { id: "moto-edge-60-pro", brand: "Motorola", name: "Moto Edge 60 Pro", price: 549, storage: 256, ram: 12, screen: 6.7, camera: "50MP triple", battery: 4500, colors: ["Eclipse Black", "Sparkling Blue", "Phantom Purple"], releaseYear: 2026, stock: 26, rating: 4.2, onSale: false },
+  { id: "moto-g-power-2026", brand: "Motorola", name: "Moto G Power 2026", price: 299, storage: 128, ram: 8, screen: 6.8, camera: "50MP dual", battery: 5200, colors: ["Slate Gray", "Earthen"], releaseYear: 2026, stock: 52, rating: 3.9, onSale: false },
+];
+
+export const brands: string[] = [...new Set(phones.map((p) => p.brand))];
+
+export function getPhone(id: string): Phone | undefined {
+  return phones.find((p) => p.id === id);
+}

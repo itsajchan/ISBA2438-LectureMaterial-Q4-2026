@@ -1,0 +1,62 @@
+BODY {
+  background-color: #008080;
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+H1 {
+  color: #FFFF00;
+  font-style: italic;
+  text-align: center;
+}
+
+H2 {
+  color: #FF8000;
+}
+
+A:link {
+  color: #00FFFF;
+}
+
+A:visited {
+  color: #FF00FF;
+}
+
+P.intro {
+  font-size: large;
+  text-align: center;
+}
+
+SPAN.badge {
+  background-color: #C0C0C0;
+  color: #000000;
+  border: solid #000000;
+  font-size: small;
+  font-weight: bold;
+  margin: 4px;
+  padding: 4px;
+}
+
+TABLE.info {
+  border: solid;
+}
+
+TD {
+  background-color: #C0C0C0;
+  color: #000000;
+}
+
+TH {
+  background-color: #000080;
+  color: #FFFFFF;
+}
+
+DIV.counter {
+  background-color: #000000;
+  color: #00FF00;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+}

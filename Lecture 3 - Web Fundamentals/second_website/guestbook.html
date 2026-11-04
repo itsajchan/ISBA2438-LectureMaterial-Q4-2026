@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>AJ's Guestbook</TITLE>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+<SCRIPT LANGUAGE="JavaScript" SRC="script.js"></SCRIPT>
+</HEAD>
+<BODY onLoad="statusScroll()">
+
+<CENTER><H1>AJ's Guestbook</H1></CENTER>
+
+<HR>
+
+<P><A HREF="index.html">[ Back to Home Page ]</A></P>
+
+<HR>
+
+<P>Thanks for visiting! Take a moment and sign my guestbook.
+<BLINK>NEW!</BLINK> The form is now <B>validated with JavaScript</B>,
+so no more empty submissions!</P>
+
+<H2>Sign My Guestbook</H2>
+
+<FORM ACTION="mailto:aj@nowhere.example" METHOD="POST" ENCTYPE="TEXT/PLAIN" onSubmit="return validateGuestbook(this)">
+<P>Your Name:<BR>
+<INPUT TYPE="TEXT" NAME="username" SIZE="40"></P>
+
+<P>E-Mail Address:<BR>
+<INPUT TYPE="TEXT" NAME="email" SIZE="40"></P>
+
+<P>Your Home Page URL (if you have one):<BR>
+<INPUT TYPE="TEXT" NAME="url" SIZE="40" VALUE="http://"></P>
+
+<P>How did you find my page?<BR>
+<SELECT NAME="found">
+<OPTION>Search engine (AltaVista rules!)
+<OPTION>My friend told me
+<OPTION>GeoCities directory
+<OPTION>I typed random URLs until I got here
+</SELECT></P>
+
+<P>Comments:<BR>
+<TEXTAREA NAME="comments" ROWS="5" COLS="50"></TEXTAREA></P>
+
+<P><INPUT TYPE="SUBMIT" VALUE="Sign Guestbook">
+<INPUT TYPE="RESET" VALUE="Start Over"></P>
+</FORM>
+
+<HR>
+
+<H2>Recent Signatures</H2>
+
+<P><B>Name:</B> SurfDude99<BR>
+<B>From:</B> California, USA<BR>
+<B>How found:</B> Search engine<BR>
+<B>Comments:</B> Whoa, you learned JavaScript! The scrolling status
+bar is AWESOME. How do you do that?!?!?!</P>
+
+<HR>
+
+<P><B>Name:</B> SysOp of The Grid BBS<BR>
+<B>From:</B> You know where<BR>
+<B>How found:</B> My friend told me<BR>
+<B>Comments:</B> Learned CSS before fixing your frames, I see. The
+BBS maintenance is STILL scheduled for Friday. Every Friday. Forever.</P>
+
+<HR>
+
+<P><B>Name:</B> Anonymous Coward<BR>
+<B>From:</B> 127.0.0.1<BR>
+<B>How found:</B> I typed random URLs until I got here<BR>
+<B>Comments:</B> First again. Still first.</P>
+
+<HR>
+
+<CENTER><A HREF="index.html">Home</A> | <A HREF="about.html">About Me</A> |
+<A HREF="links.html">Links</A></CENTER>
+
+<P><SCRIPT LANGUAGE="JavaScript">document.write("This page was last modified: " + document.lastModified);</SCRIPT></P>
+
+</BODY>
+</HTML>

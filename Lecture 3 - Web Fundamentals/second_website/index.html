@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>AJ's Home Page -- Now with JavaScript!</TITLE>
+<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+<SCRIPT LANGUAGE="JavaScript" SRC="script.js"></SCRIPT>
+</HEAD>
+<BODY onLoad="statusScroll()">
+
+<P CLASS="intro"><SCRIPT LANGUAGE="JavaScript">showClock();</SCRIPT></P>
+
+<MARQUEE BEHAVIOR="SCROLL" DIRECTION="LEFT" SCROLLAMOUNT="6">*** WELCOME TO AJ'S HOME PAGE *** NOW WITH JAVASCRIPT AND CASCADING STYLE SHEETS *** TELL YOUR FRIENDS ***</MARQUEE>
+
+<CENTER>
+<H1>AJ's Home Page</H1>
+<H2><FONT COLOR="#00FF00">UPGRADED 12/15/96 -- NOW WITH SCRIPTING AND STYLE!</FONT></H2>
+<P><SCRIPT LANGUAGE="JavaScript">greetUser();</SCRIPT></P>
+</CENTER>
+
+<HR>
+
+<P><IMG SRC="under_construction.gif" ALT="[UNDER CONSTRUCTION]"> Still
+<B>UNDER CONSTRUCTION</B> (forever!) but now with 100% more JavaScript.</P>
+
+<HR>
+
+<H2>What's New</H2>
+<UL>
+<LI><B>12/15/96</B> -- <BLINK>NEW!</BLINK> Learned <A HREF="http://home.netscape.com/eng/mozilla/3.0/handbook/javascript/index.html">JavaScript</A>! Added a visitor greeting, scrolling status bar, and a hit counter!
+<LI><B>11/20/96</B> -- <BLINK>NEW!</BLINK> Discovered <A HREF="http://www.w3.org/Style/CSS/">Cascading Style Sheets</A>! This page now has <I>STYLE</I> (check the source, there's a .css file!)
+<LI><B>11/03/96</B> -- The old plain-HTML page is still around. I keep it for posterity.
+<LI><B>09/15/96</B> -- Page created. Wow!
+</UL>
+
+<HR>
+
+<H2>Cool Stuff On My Page</H2>
+<UL>
+<LI><A HREF="about.html" onMouseOver="window.status='All about me, AJ!'; return true">All About Me</A> -- now with my computer specs in a TABLE
+<LI><A HREF="links.html" onMouseOver="window.status='The coolest links on the World Wide Web!'; return true">My Cool Links</A> -- constantly updated!
+<LI><A HREF="guestbook.html" onMouseOver="window.status='Please sign my guestbook!!!'; return true">Sign My Guestbook!</A> -- it validates now with JavaScript!
+</UL>
+
+<HR>
+
+<H2>Y2K Countdown</H2>
+<P CLASS="intro"><SCRIPT LANGUAGE="JavaScript">daysUntil2000();</SCRIPT></P>
+
+<H2>Visitors</H2>
+<P>You are visitor number:</P>
+<DIV CLASS="counter"><SCRIPT LANGUAGE="JavaScript">showCount();</SCRIPT><BR>(counter powered by JavaScript cookies -- no CGI needed!)</DIV>
+
+<HR>
+
+<H2>Fun With Scripting</H2>
+<FORM>
+<INPUT TYPE="BUTTON" VALUE="Click here to hear my modem!" onClick="modemSound()">
+</FORM>
+<P><I>(JavaScript technology: it's like a program, but on the Internet!)</I></P>
+
+<HR>
+
+<CENTER>
+<SPAN CLASS="badge">NETSCAPE NOW!</SPAN>
+<SPAN CLASS="badge">MADE WITH NOTEPAD</SPAN>
+<SPAN CLASS="badge">CSS IN USE</SPAN>
+<SPAN CLASS="badge">JAVA-FREE</SPAN>
+</CENTER>
+
+<P><A HREF="mailto:aj@nowhere.example" onMouseOver="window.status='Send me some e-mail!'; return true">Send me e-mail!</A></P>
+
+<HR>
+
+<CENTER><FONT SIZE="2">&copy; 1996 AJ. All rights reserved. This page requires Netscape Navigator 3.0 or Microsoft Internet Explorer 3.0 or better.</FONT></CENTER>
+
+</BODY>
+</HTML>
