@@ -1,0 +1,24 @@
+[
+  {
+    "id": "91766004-4b00-4114-b33f-8a003d0c5a5f",
+    "name": "Soy Milk",
+    "category": "Beverages",
+    "unit": "1 Cup",
+    "price": 2.59,
+    "was": 2.59,
+    "emoji": "🥛",
+    "color": "bg-slate-100",
+    "badge": "New"
+  },
+  {
+    "id": "741861cd-a082-43c7-b41e-694f68c76cff",
+    "name": "Product Update",
+    "category": "Fresh Produce",
+    "unit": "2",
+    "price": 10,
+    "was": 10,
+    "emoji": "🍓",
+    "color": "bg-red-100",
+    "badge": "New"
+  }
+]

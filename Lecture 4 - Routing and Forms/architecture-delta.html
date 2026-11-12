@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Delta — Server-Rendered vs Client-Rendered</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .arrowhead-r {
+      position: absolute; right: -2px; top: 50%; transform: translateY(-50%);
+      width: 0; height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 7px solid currentColor;
+    }
+    .arrowhead-l {
+      position: absolute; left: -2px; top: 50%; transform: translateY(-50%);
+      width: 0; height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-right: 7px solid currentColor;
+    }
+    .lifeline { border-left: 2px dashed rgba(100, 116, 139, 0.35); }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-700 font-sans antialiased">
+
+  <div class="max-w-5xl mx-auto px-4 py-10">
+
+    <header class="text-center mb-8">
+      <p class="text-xs uppercase tracking-[0.3em] text-indigo-600 mb-2">lecture 4 · routing and forms · one todo app, two architectures</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900">The Delta</h1>
+    </header>
+
+    <section class="mb-10 rounded-2xl bg-gradient-to-r from-sky-600 via-indigo-600 to-violet-600 p-[2px]">
+      <div class="rounded-2xl bg-white px-6 py-5 text-center">
+        <p class="text-lg md:text-xl font-semibold text-slate-900">
+          Server-rendered <span class="text-sky-600">moves documents</span>
+          <span class="text-slate-400 font-normal">·</span>
+          Client-rendered <span class="text-violet-600">moves state</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-slate-500 mb-4">The formal delta</h2>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-300/30">
+        <table class="w-full min-w-[680px] text-sm text-left">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-wider text-slate-500">
+              <th class="px-5 py-3 font-semibold">Dimension</th>
+              <th class="px-5 py-3 font-semibold text-sky-700">Server-rendered (PRG)</th>
+              <th class="px-5 py-3 font-semibold text-violet-700">Client-rendered (API)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="px-5 py-3 font-medium text-slate-500">Formal name</td>
+              <td class="px-5 py-3">Hypermedia model — classic web / MPA</td>
+              <td class="px-5 py-3">SPA consuming a REST(ish) API</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3 font-medium text-slate-500">What travels</td>
+              <td class="px-5 py-3">HTML <span class="font-semibold">documents</span> — the response IS the UI</td>
+              <td class="px-5 py-3">JSON <span class="font-semibold">representations</span> — data only</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3 font-medium text-slate-500">State transition</td>
+              <td class="px-5 py-3">Navigation — every action loads a new document</td>
+              <td class="px-5 py-3">Function call — JS mutates the DOM in place</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3 font-medium text-slate-500">Who renders</td>
+              <td class="px-5 py-3">Server — <span class="font-mono text-xs text-sky-700">render_page()</span></td>
+              <td class="px-5 py-3">Browser — <span class="font-mono text-xs text-violet-700">renderTodos()</span></td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3 font-medium text-slate-500">State between requests</td>
+              <td class="px-5 py-3">None in the browser; rebuilt from disk on every GET</td>
+              <td class="px-5 py-3">DOM + JS objects persist; synced via fetch</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3 font-medium text-slate-500">Client type</td>
+              <td class="px-5 py-3">Generic — any browser, zero custom code</td>
+              <td class="px-5 py-3">Custom client coupled to the API contract</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3 font-medium text-slate-500">After a form POST</td>
+              <td class="px-5 py-3">Server replies <span class="font-mono text-xs text-fuchsia-700">303 + Location: /</span> (PRG pattern)</td>
+              <td class="px-5 py-3"><span class="font-mono text-xs text-fuchsia-700">preventDefault()</span> — no navigation at all</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-slate-500 mb-4">Same story as UML sequence diagrams</h2>
+      <div class="grid gap-6 md:grid-cols-2 items-start">
+
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-300/30 overflow-hidden">
+          <div class="border-b border-slate-200 bg-sky-50 px-5 py-3">
+            <h3 class="font-semibold text-sky-800 text-sm">Server-rendered · PRG</h3>
+            <p class="text-[11px] text-sky-600 font-mono">todo_app_server_rendered/server.py</p>
+          </div>
+          <div class="overflow-x-auto">
+            <div class="relative min-w-[520px] p-5 pb-2">
+              <div class="absolute top-[58px] bottom-5 left-[25%] lifeline"></div>
+              <div class="absolute top-[58px] bottom-5 left-[75%] lifeline"></div>
+
+              <div class="relative h-14">
+                <div class="absolute top-1 left-[25%] -translate-x-1/2 rounded-lg border border-sky-300 bg-sky-50 px-4 py-1.5 text-center w-36">
+                  <p class="text-xs font-semibold text-sky-700">Browser</p>
+                </div>
+                <div class="absolute top-1 left-[75%] -translate-x-1/2 rounded-lg border border-violet-300 bg-violet-50 px-4 py-1.5 text-center w-36">
+                  <p class="text-xs font-semibold text-violet-700">Server</p>
+                </div>
+              </div>
+
+              <div class="relative h-12 text-emerald-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] text-emerald-700 font-mono">① GET /</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-r"></div></div>
+              </div>
+              <div class="relative h-12 text-emerald-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] text-emerald-700 font-mono">② 200 OK · full HTML</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-l"></div></div>
+              </div>
+              <div class="relative h-11">
+                <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-[10px] text-slate-600">user submits the form</div>
+              </div>
+              <div class="relative h-12 text-amber-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-amber-300 bg-amber-50 px-2.5 py-0.5 text-[10px] text-amber-700 font-mono">③ POST /add-todo</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-r"></div></div>
+              </div>
+              <div class="relative h-12 text-fuchsia-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 animate-pulse rounded-full border border-fuchsia-300 bg-fuchsia-50 px-2.5 py-0.5 text-[10px] text-fuchsia-700 font-mono">④ 303 · Location: /</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-l"></div></div>
+              </div>
+              <div class="relative h-12 text-emerald-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] text-emerald-700 font-mono">⑤ GET / → 200 full HTML</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-r"></div></div>
+              </div>
+              <div class="relative h-16">
+                <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[80%] rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-[10px] text-sky-800 text-center">
+                  every action = a full document load · refresh is a safe GET
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-300/30 overflow-hidden">
+          <div class="border-b border-slate-200 bg-violet-50 px-5 py-3">
+            <h3 class="font-semibold text-violet-800 text-sm">Client-rendered · SPA + API</h3>
+            <p class="text-[11px] text-violet-600 font-mono">todo_app_client_rendered_api/</p>
+          </div>
+          <div class="overflow-x-auto">
+            <div class="relative min-w-[520px] p-5 pb-2">
+              <div class="absolute top-[58px] bottom-5 left-[25%] lifeline"></div>
+              <div class="absolute top-[58px] bottom-5 left-[75%] lifeline"></div>
+
+              <div class="relative h-14">
+                <div class="absolute top-1 left-[25%] -translate-x-1/2 rounded-lg border border-sky-300 bg-sky-50 px-4 py-1.5 text-center w-36">
+                  <p class="text-xs font-semibold text-sky-700">Browser + JS</p>
+                </div>
+                <div class="absolute top-1 left-[75%] -translate-x-1/2 rounded-lg border border-violet-300 bg-violet-50 px-4 py-1.5 text-center w-36">
+                  <p class="text-xs font-semibold text-violet-700">JSON API</p>
+                </div>
+              </div>
+
+              <div class="relative h-12 text-emerald-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] text-emerald-700 font-mono">① GET / · GET /client.js</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-r"></div></div>
+              </div>
+              <div class="relative h-12 text-emerald-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] text-emerald-700 font-mono">② 200 · shell + script</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-l"></div></div>
+              </div>
+              <div class="relative h-12 text-emerald-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] text-emerald-700 font-mono">③ GET /api/todos</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-r"></div></div>
+              </div>
+              <div class="relative h-12 text-sky-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-sky-300 bg-sky-50 px-2.5 py-0.5 text-[10px] text-sky-700 font-mono">④ 200 · {"todos":[…]}</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-l"></div></div>
+              </div>
+              <div class="relative h-12">
+                <div class="absolute left-[25%] -translate-x-1/2 top-1/2 -translate-y-1/2 w-44 rounded-lg border border-violet-200 bg-violet-50 px-2 py-1.5 text-[10px] text-violet-700 text-center font-mono">renderTodos() builds the DOM</div>
+              </div>
+              <div class="relative h-14">
+                <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[80%] animate-pulse rounded-xl border-2 border-violet-400 bg-violet-50 px-3 py-2 text-center">
+                  <p class="text-[11px] font-mono font-semibold text-violet-700">⑤ preventDefault()</p>
+                  <p class="text-[9px] text-violet-600">no navigation, no redirect needed</p>
+                </div>
+              </div>
+              <div class="relative h-12 text-amber-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-amber-300 bg-amber-50 px-2.5 py-0.5 text-[10px] text-amber-700 font-mono">⑥ POST /api/todos · JSON</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-r"></div></div>
+              </div>
+              <div class="relative h-12 text-sky-600">
+                <span class="absolute left-1/2 -translate-x-1/2 top-0 z-10 rounded-full border border-sky-300 bg-sky-50 px-2.5 py-0.5 text-[10px] text-sky-700 font-mono">⑦ 201 · {"todos":[…]}</span>
+                <div class="absolute bottom-3 left-[25%] w-[50%] border-t-2 border-current"><div class="arrowhead-l"></div></div>
+              </div>
+              <div class="relative h-16">
+                <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[80%] rounded-lg border border-violet-200 bg-violet-50 px-3 py-2 text-[10px] text-violet-800 text-center">
+                  DOM updated in place · page never reloads · refresh re-runs client.js
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-slate-500 mb-4">The formal framing</h2>
+      <div class="grid gap-5 md:grid-cols-2">
+
+        <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+          <h3 class="font-semibold text-sky-700">REST — Fielding, 2000</h3>
+          <p class="mt-2 text-sm text-slate-600">Formalizes the API version: <span class="font-semibold">resources</span> (<span class="font-mono text-xs">/api/todos</span>), <span class="font-semibold">representations</span> (JSON), a <span class="font-semibold">uniform interface</span> (GET / POST / DELETE, status codes 201 · 400 · 404), and statelessness.</p>
+        </div>
+
+        <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+          <h3 class="font-semibold text-emerald-700">HATEOAS — hypermedia as the engine of state</h3>
+          <p class="mt-2 text-sm text-slate-600">The server-rendered version embodies this REST constraint: the form and links the server sends <span class="font-semibold">are</span> the application's state machine, and the browser is a generic hypermedia engine.</p>
+        </div>
+
+        <div class="rounded-2xl border border-violet-200 bg-violet-50 p-6">
+          <h3 class="font-semibold text-violet-700">UML sequence diagrams</h3>
+          <p class="mt-2 text-sm text-slate-600">The standard formal notation for message exchange between processes — lifelines, ordered messages, request/response arrows. Both diagrams above use it.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="font-semibold text-slate-700">HTTP spec + named patterns</h3>
+          <p class="mt-2 text-sm text-slate-600">Request/response semantics are formally defined in <span class="font-mono text-xs">RFC 9110/9112</span>. Post/Redirect/Get is a named <span class="font-semibold">web design pattern</span>; "SPA + JSON API" is its architectural counterpart.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="rounded-2xl border border-slate-200 bg-white p-6 text-center">
+      <p class="text-xs text-slate-500">
+        <span class="font-semibold text-slate-600">Full diagrams:</span>
+        <span class="font-mono">todo_app_server_rendered/prg-diagram.html</span> ·
+        <span class="font-mono">todo_app_client_rendered_api/api-diagram.html</span>
+        <br><br>
+        Sources: <span class="font-mono">todo_app_server_rendered/server.py</span> ·
+        <span class="font-mono">todo_app_client_rendered_api/server.py + static/client.js</span>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
