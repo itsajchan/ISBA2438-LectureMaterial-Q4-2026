@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+  runtime  = "nodejs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  emoji    String    @default("🛒")
+  color    String    @default("bg-stone-100")
+  products Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id         String    @id @default(uuid())
+  name       String
+  categoryId String
+  category   Category  @relation(fields: [categoryId], references: [id])
+  unit       String
+  price      Decimal   @db.Decimal(10, 2)
+  was        Decimal?  @db.Decimal(10, 2)
+  emoji      String?
+  color      String?
+  badge      String?
+  quantity   Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@map("products")
+}
