@@ -1,0 +1,502 @@
+[
+  {
+    "name": "Strawberries",
+    "category": "Fresh Produce",
+    "unit": "1 lb",
+    "price": 3.49,
+    "was": 4.99,
+    "emoji": "🍓",
+    "color": "bg-red-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Avocado",
+    "category": "Fresh Produce",
+    "unit": "each",
+    "price": 1.29,
+    "was": 1.29,
+    "emoji": "🥑",
+    "color": "bg-lime-100",
+    "badge": "Organic"
+  },
+  {
+    "name": "Baby Spinach",
+    "category": "Fresh Produce",
+    "unit": "10 oz",
+    "price": 3.99,
+    "was": 3.99,
+    "emoji": "🥬",
+    "color": "bg-green-100",
+    "badge": null
+  },
+  {
+    "name": "Carrots",
+    "category": "Fresh Produce",
+    "unit": "2 lb",
+    "price": 2.19,
+    "was": 2.79,
+    "emoji": "🥕",
+    "color": "bg-orange-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Bananas",
+    "category": "Fresh Produce",
+    "unit": "1 lb",
+    "price": 0.59,
+    "was": 0.59,
+    "emoji": "🍌",
+    "color": "bg-yellow-100",
+    "badge": null
+  },
+  {
+    "name": "Ribeye Steak",
+    "category": "Meat & Poultry",
+    "unit": "1 lb",
+    "price": 14.99,
+    "was": 17.99,
+    "emoji": "🥩",
+    "color": "bg-red-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Chicken Breast",
+    "category": "Meat & Poultry",
+    "unit": "1.5 lb",
+    "price": 7.49,
+    "was": 7.49,
+    "emoji": "🍗",
+    "color": "bg-rose-100",
+    "badge": null
+  },
+  {
+    "name": "Ground Beef 80/20",
+    "category": "Meat & Poultry",
+    "unit": "1 lb",
+    "price": 5.99,
+    "was": 6.99,
+    "emoji": "🥩",
+    "color": "bg-red-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Pork Chops",
+    "category": "Meat & Poultry",
+    "unit": "1 lb",
+    "price": 6.49,
+    "was": 6.49,
+    "emoji": "🥓",
+    "color": "bg-rose-100",
+    "badge": null
+  },
+  {
+    "name": "Deli Turkey Slices",
+    "category": "Meat & Poultry",
+    "unit": "12 oz",
+    "price": 5.29,
+    "was": 5.29,
+    "emoji": "🦃",
+    "color": "bg-amber-100",
+    "badge": "New"
+  },
+  {
+    "name": "Atlantic Salmon",
+    "category": "Seafood",
+    "unit": "1 lb",
+    "price": 11.99,
+    "was": 13.99,
+    "emoji": "🐟",
+    "color": "bg-sky-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Jumbo Shrimp",
+    "category": "Seafood",
+    "unit": "12 oz",
+    "price": 9.49,
+    "was": 9.49,
+    "emoji": "🦐",
+    "color": "bg-orange-100",
+    "badge": null
+  },
+  {
+    "name": "Tuna Steak",
+    "category": "Seafood",
+    "unit": "8 oz",
+    "price": 8.99,
+    "was": 8.99,
+    "emoji": "🐟",
+    "color": "bg-sky-100",
+    "badge": "New"
+  },
+  {
+    "name": "Cod Fillet",
+    "category": "Seafood",
+    "unit": "1 lb",
+    "price": 7.99,
+    "was": 8.99,
+    "emoji": "🐟",
+    "color": "bg-cyan-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Snow Crab Legs",
+    "category": "Seafood",
+    "unit": "1 lb",
+    "price": 19.99,
+    "was": 19.99,
+    "emoji": "🦞",
+    "color": "bg-red-100",
+    "badge": null
+  },
+  {
+    "name": "Butter Croissants",
+    "category": "Bakery",
+    "unit": "4 pack",
+    "price": 4.99,
+    "was": 5.99,
+    "emoji": "🥐",
+    "color": "bg-amber-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Sourdough Loaf",
+    "category": "Bakery",
+    "unit": "each",
+    "price": 4.49,
+    "was": 4.49,
+    "emoji": "🥖",
+    "color": "bg-yellow-100",
+    "badge": "Local"
+  },
+  {
+    "name": "Everything Bagels",
+    "category": "Bakery",
+    "unit": "6 pack",
+    "price": 3.99,
+    "was": 3.99,
+    "emoji": "🥯",
+    "color": "bg-amber-100",
+    "badge": null
+  },
+  {
+    "name": "Blueberry Muffins",
+    "category": "Bakery",
+    "unit": "4 pack",
+    "price": 4.79,
+    "was": 5.79,
+    "emoji": "🧁",
+    "color": "bg-purple-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "French Baguette",
+    "category": "Bakery",
+    "unit": "each",
+    "price": 2.99,
+    "was": 2.99,
+    "emoji": "🥖",
+    "color": "bg-amber-100",
+    "badge": null
+  },
+  {
+    "name": "Whole Milk",
+    "category": "Dairy & Eggs",
+    "unit": "1 gal",
+    "price": 4.29,
+    "was": 4.29,
+    "emoji": "🥛",
+    "color": "bg-slate-100",
+    "badge": null
+  },
+  {
+    "name": "Cheddar Cheese",
+    "category": "Dairy & Eggs",
+    "unit": "8 oz",
+    "price": 3.99,
+    "was": 4.99,
+    "emoji": "🧀",
+    "color": "bg-yellow-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Free-Range Eggs",
+    "category": "Dairy & Eggs",
+    "unit": "12 count",
+    "price": 5.49,
+    "was": 5.49,
+    "emoji": "🥚",
+    "color": "bg-amber-100",
+    "badge": "Organic"
+  },
+  {
+    "name": "Greek Yogurt",
+    "category": "Dairy & Eggs",
+    "unit": "32 oz",
+    "price": 5.99,
+    "was": 5.99,
+    "emoji": "🥣",
+    "color": "bg-stone-100",
+    "badge": null
+  },
+  {
+    "name": "Salted Butter",
+    "category": "Dairy & Eggs",
+    "unit": "1 lb",
+    "price": 4.19,
+    "was": 4.99,
+    "emoji": "🧈",
+    "color": "bg-yellow-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Frozen Pepperoni Pizza",
+    "category": "Frozen Foods",
+    "unit": "each",
+    "price": 6.99,
+    "was": 8.49,
+    "emoji": "🍕",
+    "color": "bg-red-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Vanilla Ice Cream",
+    "category": "Frozen Foods",
+    "unit": "1 qt",
+    "price": 5.49,
+    "was": 5.49,
+    "emoji": "🍦",
+    "color": "bg-stone-100",
+    "badge": null
+  },
+  {
+    "name": "Frozen Mixed Berries",
+    "category": "Frozen Foods",
+    "unit": "16 oz",
+    "price": 4.29,
+    "was": 4.29,
+    "emoji": "🧊",
+    "color": "bg-cyan-100",
+    "badge": "New"
+  },
+  {
+    "name": "Chicken Nuggets",
+    "category": "Frozen Foods",
+    "unit": "24 oz",
+    "price": 7.99,
+    "was": 9.49,
+    "emoji": "🍗",
+    "color": "bg-amber-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Frozen Waffles",
+    "category": "Frozen Foods",
+    "unit": "10 count",
+    "price": 3.29,
+    "was": 3.29,
+    "emoji": "🧇",
+    "color": "bg-yellow-100",
+    "badge": null
+  },
+  {
+    "name": "Basmati Rice",
+    "category": "Pantry Staples",
+    "unit": "5 lb",
+    "price": 8.99,
+    "was": 8.99,
+    "emoji": "🍚",
+    "color": "bg-orange-100",
+    "badge": null
+  },
+  {
+    "name": "Extra Virgin Olive Oil",
+    "category": "Pantry Staples",
+    "unit": "500 ml",
+    "price": 10.99,
+    "was": 12.99,
+    "emoji": "🫒",
+    "color": "bg-lime-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Spaghetti",
+    "category": "Pantry Staples",
+    "unit": "16 oz",
+    "price": 1.99,
+    "was": 1.99,
+    "emoji": "🍝",
+    "color": "bg-amber-100",
+    "badge": null
+  },
+  {
+    "name": "Black Beans",
+    "category": "Pantry Staples",
+    "unit": "15 oz can",
+    "price": 1.29,
+    "was": 1.29,
+    "emoji": "🫘",
+    "color": "bg-stone-100",
+    "badge": null
+  },
+  {
+    "name": "Creamy Peanut Butter",
+    "category": "Pantry Staples",
+    "unit": "16 oz",
+    "price": 4.59,
+    "was": 5.29,
+    "emoji": "🥜",
+    "color": "bg-orange-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Potato Chips",
+    "category": "Snacks & Sweets",
+    "unit": "10 oz",
+    "price": 3.79,
+    "was": 3.79,
+    "emoji": "🥔",
+    "color": "bg-yellow-100",
+    "badge": null
+  },
+  {
+    "name": "Chocolate Chip Cookies",
+    "category": "Snacks & Sweets",
+    "unit": "13 oz",
+    "price": 4.29,
+    "was": 4.99,
+    "emoji": "🍪",
+    "color": "bg-amber-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Dark Chocolate Bar",
+    "category": "Snacks & Sweets",
+    "unit": "3.5 oz",
+    "price": 2.99,
+    "was": 2.99,
+    "emoji": "🍫",
+    "color": "bg-stone-100",
+    "badge": null
+  },
+  {
+    "name": "Trail Mix",
+    "category": "Snacks & Sweets",
+    "unit": "1 lb",
+    "price": 6.49,
+    "was": 6.49,
+    "emoji": "🥜",
+    "color": "bg-orange-100",
+    "badge": "New"
+  },
+  {
+    "name": "Gummy Bears",
+    "category": "Snacks & Sweets",
+    "unit": "7 oz",
+    "price": 2.49,
+    "was": 2.99,
+    "emoji": "🐻",
+    "color": "bg-pink-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Orange Juice",
+    "category": "Beverages",
+    "unit": "64 oz",
+    "price": 4.99,
+    "was": 4.99,
+    "emoji": "🍊",
+    "color": "bg-orange-100",
+    "badge": null
+  },
+  {
+    "name": "Sparkling Water",
+    "category": "Beverages",
+    "unit": "12 pack",
+    "price": 6.99,
+    "was": 7.99,
+    "emoji": "🫧",
+    "color": "bg-cyan-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Cold Brew Coffee",
+    "category": "Beverages",
+    "unit": "32 oz",
+    "price": 7.49,
+    "was": 7.49,
+    "emoji": "☕",
+    "color": "bg-stone-100",
+    "badge": "New"
+  },
+  {
+    "name": "Green Tea",
+    "category": "Beverages",
+    "unit": "20 bags",
+    "price": 3.99,
+    "was": 3.99,
+    "emoji": "🍵",
+    "color": "bg-green-100",
+    "badge": null
+  },
+  {
+    "name": "Soy Milk",
+    "category": "Beverages",
+    "unit": "1 Cup",
+    "price": 2.59,
+    "was": 2.59,
+    "emoji": "🥛",
+    "color": "bg-slate-100",
+    "badge": "New"
+  },
+  {
+    "name": "Paper Towels",
+    "category": "Household",
+    "unit": "6 rolls",
+    "price": 9.99,
+    "was": 11.99,
+    "emoji": "🧻",
+    "color": "bg-stone-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Dish Soap",
+    "category": "Household",
+    "unit": "16 oz",
+    "price": 3.49,
+    "was": 3.49,
+    "emoji": "🧼",
+    "color": "bg-cyan-100",
+    "badge": null
+  },
+  {
+    "name": "Laundry Detergent",
+    "category": "Household",
+    "unit": "64 loads",
+    "price": 12.99,
+    "was": 14.99,
+    "emoji": "🧺",
+    "color": "bg-sky-100",
+    "badge": "Sale"
+  },
+  {
+    "name": "Trash Bags",
+    "category": "Household",
+    "unit": "40 count",
+    "price": 8.49,
+    "was": 8.49,
+    "emoji": "🗑️",
+    "color": "bg-stone-100",
+    "badge": null
+  },
+  {
+    "name": "Aluminum Foil",
+    "category": "Household",
+    "unit": "75 sq ft",
+    "price": 4.99,
+    "was": 4.99,
+    "emoji": "📦",
+    "color": "bg-slate-100",
+    "badge": null
+  }
+]
